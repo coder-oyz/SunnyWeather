@@ -2,6 +2,9 @@ package com.sunnyweather.android.logic.model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * 实时信息响应
+ */
 class RealtimeResponse(val status: String, val result: Result) {
 
     class Result(val realtime: Realtime)

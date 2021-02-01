@@ -7,6 +7,9 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
+/**
+ * 天气API的Retrofit接口
+ */
 interface WeatherService {
 
     @GET("v2.5/${SunnyWeatherApplication.TOKEN}/{lng},{lat}/realtime.json")

@@ -57,6 +57,9 @@ object Repository {
 
     fun isPlaceSaved() = PlaceDao.isPlaceSaved()
 
+    /**
+     * 一起try-catch,一起返回
+     */
     private fun <T> fire(context: CoroutineContext, block: suspend () -> Result<T>) =
         liveData<Result<T>>(context) {
             val result = try {
