@@ -63,9 +63,14 @@ class WeatherActivity : AppCompatActivity() {
         swipeRefresh.setOnRefreshListener {
             refreshWeather()
         }
+        /**
+         * 滑动菜单的罗技
+         */
         navBtn.setOnClickListener {
+            //打开滑动菜单
             drawerLayout.openDrawer(GravityCompat.START)
         }
+        //监听滑动菜单的状态
         drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
             override fun onDrawerStateChanged(newState: Int) {}
 
