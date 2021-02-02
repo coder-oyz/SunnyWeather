@@ -23,11 +23,30 @@ android {
         abortOnError false
     }
 
+    signingConfigs {
+//        config {
+//            //明文配置不安全
+//            storeFile file("C:/Users/DELL/coderoyz.jks")
+//            storePassword '12345678a'
+//            keyAlias = 'coderoyzdev'
+//            keyPassword '12345678a'
+//        }
+            config {
+            //使用全局配置局部键值对
+            storeFile file(KEY_PATH)
+            storePassword KEY_PASS
+            keyAlias = ALIAS_NAME
+            keyPassword ALIAS_PASS
+        }
+    }
+
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //        应用配置
+            signingConfig signingConfigs.config
         }
     }
 }
