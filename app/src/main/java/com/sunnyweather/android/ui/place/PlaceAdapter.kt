@@ -45,6 +45,7 @@ class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: L
                 fragment.startActivity(intent)
                 activity?.finish()
             }
+            //缓存数据
             fragment.viewModel.savePlace(place)
         }
         return holder
