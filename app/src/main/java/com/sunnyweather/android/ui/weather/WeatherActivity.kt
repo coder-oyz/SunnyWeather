@@ -57,6 +57,7 @@ class WeatherActivity : AppCompatActivity() {
             }
             swipeRefresh.isRefreshing = false
         })
+        //设置进度条颜色
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary)
         refreshWeather()
         swipeRefresh.setOnRefreshListener {
@@ -80,6 +81,7 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     fun refreshWeather() {
+        //刷新天气，显示进度条
         viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat)
         swipeRefresh.isRefreshing = true
     }
